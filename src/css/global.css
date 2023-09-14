@@ -1,0 +1,147 @@
+html {
+    font-size:  62.5%;
+    box-sizing: border-box; /*hack para box moderl */
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    position: relative;
+}
+.contHeader{
+    position:relative;
+    
+}
+
+
+.tienda {
+    position: fixed;
+    top: 57px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    height: 300px;
+    z-index: 10;
+    transition: all .4s ease;
+    animation: hover-header .4s ease;
+}
+
+.tienda .contItems{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 35px;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all .3s ease;
+}
+
+.item img {
+    width: 180px;
+    cursor: pointer;
+}
+
+@keyframes hover-header{
+    0%{
+        opacity: 0;
+        height: 200px;
+    }
+    100%{
+        opacity: 1;
+        height: 300px;
+    }
+}
+
+.logo{
+    width: 120px; 
+    cursor: pointer;/* Ajusta el ancho deseado *//* Cambia #000 al color que desees para el relleno de los SVG */
+}
+
+.nav-icons{
+    width: 25px;
+    margin: 0 10px;
+}
+
+.logo, .nav-icons{
+    fill: white;
+}
+
+.change-color path, .change-color{
+    fill: rgb(0, 0, 0);
+    color: #131212;
+    transition: all .4s ease;
+    
+}
+
+.header{
+    position: fixed;
+    padding: 15px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    z-index: 10;
+    top: 0;
+    transition: all .4s ease;
+}
+
+.contenedor-links-header, .contenedor-header-iconos{
+    display: flex;
+    list-style: none;
+}
+.contenedor-links-header li a{
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+
+.contenedor-links-header li a:hover{
+    background-color: #b3b2b246;
+}
+.contentedor-section-botones button, .boton-3{
+    position: relative;
+    border: none;
+    opacity: .9;
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 250px;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.header-menu{
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+@media (width < 1200px){
+    .logo{
+        width: 150px;
+    }
+    .contenedor-links-header, .contenedor-header-iconos {
+        display: none;
+    }
+    .header-menu{
+        display: block;
+    }
+}
